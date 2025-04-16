@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Assylbek</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
     html, body {
       height: 100%;
@@ -67,5 +68,31 @@
       </div>
     </details>
   </div>
+  <input type="text" id="name" placeholder="Ваше имя">
+  <br>
+  <textarea id="message" placeholder="Сообщение"></textarea>
+  <br>
+  <button onclick="sendMessage()">Отправить</button>
+
+  <script>
+      import { createClient } from '@supabase/supabase-js';
+      const supabaseUrl = 'https://zinkipguespdkeijqcfk.supabase.co';
+      const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InppbmtpcGd1ZXNwZGtlaWpxY2ZrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ3OTA1MDksImV4cCI6MjA2MDM2NjUwOX0.hr9hTvKrOiary3EJMfqVVxpLPk01LwTuJ8C_wh7KzjQ';
+      const supabase = createClient(supabaseUrl, supabaseKey);
+      async function sendMessage() {
+        const name = document.getElementById("name").value;
+        const message = document.getElementById("message").value;
+    
+        const { data, error } = await supabase
+          .from("messages")
+          .insert([{ name: name, message: message }]);
+    
+        if (error) {
+          alert("Ошибка: " + error.message);
+        } else {
+          alert("Успешно отправлено!");
+        }
+      }
+  </script>
 </body>
 </html>
