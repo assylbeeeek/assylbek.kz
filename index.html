@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>assylbek.kz</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assylbek</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .content {
+      font-size: 6vw; /* адаптивный размер шрифта */
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        font-size: 8vw;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content {
+        font-size: 10vw;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Арыстан котакбас</h1>
+  <div class="content">
+    Привет! 👋 Я Асылбек<br />
+    Добро пожаловать на мой сайт!
+  </div>
 </body>
 </html>
