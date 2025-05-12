@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Site</title> -->
+     <style>
+        html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .content {
+    font-size: 2vw; /* адаптивный размер шрифта */
+    padding: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .content {
+      font-size: 8vw;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .content {
+      font-size: 10vw;
+    }
+  }
+
+  details {
+    font-size: 1.5em;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+
+  summary {
+    font-weight: bold;
+    color: #333;
+  }
+
+  .hidden-content {
+    padding: 10px;
+    background-color: #e6e6e6;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+
+.type {
+    font-family: monospace;
+    color:#0000;
+    background:
+      linear-gradient(-90deg,#00DFFC 5px,#0000 0) 10px 0,
+      linear-gradient(#00DFFC 0 0) 0 0;
+    background-size:calc(var(--n)*1ch) 200%;
+    -webkit-background-clip:padding-box,text;
+    background-clip:padding-box,text;
+    background-repeat:no-repeat;
+    animation: 
+      b .7s infinite steps(1),   
+      t calc(var(--n)*.150s) steps(var(--n)) forwards;
+  }
+  @keyframes t{
+    from {background-size:0 200%}
+  }
+  @keyframes b{
+    50% {background-position:0 -100%,0 0}
+  }
+     </style>
+</head>
+<body>
+    <div class="content">
+    <span class="type" style="--n:95">Assalamu Aleikum, World! <br> My name is Assylbek. I am system administrator from Almaty, Kazakhstan.</span>
+    </div>
+    <!-- <div class="type">Assalamu Aleikum, World!<br> My name is Assylbek. I am IT enthusiast and from Almaty, Kazakhstan.</div> -->
+</body>
+</html>
